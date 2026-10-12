@@ -7,10 +7,14 @@
 				</div>
 				<span class="font-bold text-slate-800 text-lg tracking-tight"><?php echo siteName; ?></span>
 			</div>
-			<div class="flex items-center space-x-2">
+			<div class="flex items-center space-x-1">
 				<a href="<?php echo urlRoot; ?>/pages/index" class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:text-indigo-600 hover:bg-slate-100 transition-colors">Inicio</a>
-				<a href="<?php echo urlRoot; ?>/categories/index" class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:text-indigo-600 hover:bg-slate-100 transition-colors">Categorías</a>
-				<a href="<?php echo urlRoot; ?>/products/index" class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:text-indigo-600 hover:bg-slate-100 transition-colors">Productos</a>
+				<?php if(isLoggedIn()): ?>
+					<a href="<?php echo urlRoot; ?>/categories/index" class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:text-indigo-600 hover:bg-slate-100 transition-colors">Categorías</a>
+					<a href="<?php echo urlRoot; ?>/products/index" class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:text-indigo-600 hover:bg-slate-100 transition-colors">Productos</a>
+					<a href="<?php echo urlRoot; ?>/sales/index" class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:text-indigo-600 hover:bg-slate-100 transition-colors">Ventas</a>
+				<?php endif; ?>
+				<a href="<?php echo urlRoot; ?>/shop" class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:text-indigo-600 hover:bg-slate-100 transition-colors">Tienda</a>
 				<a href="<?php echo urlRoot; ?>/pages/about" class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:text-indigo-600 hover:bg-slate-100 transition-colors">Acerca de..</a>
 				<?php if(isLoggedIn()): ?>
 					<a href="<?php echo urlRoot; ?>/users/logout" class="ml-2 px-4 py-2 rounded-lg text-sm font-medium text-white bg-rose-600 hover:bg-rose-700 transition-colors shadow-sm">Salir</a>
